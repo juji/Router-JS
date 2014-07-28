@@ -98,7 +98,6 @@ var Router = {
     	
     	if(t.pushstate) {
     		window.onpushstate = window.onpopstate = function(){
-    			console.log('pushstate');
     			t.check(t.getFragment());
     		}
     	}else if(typeof window.onhashchange!='undefined'&&t.hashbang){
@@ -106,14 +105,12 @@ var Router = {
     		if(typeof window.addEventListener != 'undefined') fn = window.addEventListener;
     		else if(typeof window.attachEvent != 'undefined') {fn = window.attachEvent; ev='on'+ev;}
     		fn( ev, function(){
-    			console.log('hashchange');
     			t.check( t.getFragment() );
     		}, false );
     	}else{
     		t.current = t.getFragment();
     		t.interval = setInterval(function(){
     			if(t.current != t.getFragment()){
-    				console.log('interval');
     				t.current = t.getFragment();
     				t.check( t.current );
     			}
