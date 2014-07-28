@@ -9,7 +9,7 @@ or AJAX-based page rendering.
 
 ###usage
 ```html
-<script src="Router.js"></script>
+<script src="Router.min.js"></script>
 ```
 
 ```javascript
