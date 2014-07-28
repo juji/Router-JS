@@ -100,9 +100,9 @@ Check these using your console:
     
 ```
 <br />
-<br />
 ###:)
-cheers.. [jujiyangasli.com](jujiyangasli.com)
+cheers..<br />
+[jujiyangasli.com](jujiyangasli.com)
 
 
 
