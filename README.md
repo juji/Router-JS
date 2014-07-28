@@ -102,7 +102,6 @@ Check these using your console:
 <br />
 <br />
 ###:)
-<br />
 cheers.. [jujiyangasli.com](jujiyangasli.com)
 
 
