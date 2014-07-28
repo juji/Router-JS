@@ -3,7 +3,7 @@ Router-JS
 Is an HTML 5 Router JavaScript library for Single Page Applications,<br />
 or AJAX-based page rendering.
 
-###Feature
+###Features
 - history `pushState` and `popState`
 - Optional fallback to `#hash` value
 - Tested on IE6+, Firefox, Opera Chrome
