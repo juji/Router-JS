@@ -99,6 +99,9 @@ Check these using your console:
     // {query:'123'}
     
 ```
+
+###example
+[http://juji.github.io/Router-JS/](http://juji.github.io/Router-JS/)
 <br />
 ###:)
 cheers..<br />
