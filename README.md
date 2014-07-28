@@ -1,7 +1,7 @@
 Router-JS
 =========
 Is an HTML 5 Router JavaScript library for Single Page Applications,<br />
-or AJAX based page rendering.
+or AJAX-based page rendering.
 
 ###Feature
 - history `pushState` and `popState`
