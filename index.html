@@ -12,7 +12,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/json2/20130526/json2.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="/Router.min.js"></script>
+		<script src="/Router-JS/Router.min.js"></script>
 		<script>
 		console = {}; console.log = function(str){$('#asdf').append('<div>'+(typeof str == 'object'?JSON.stringify(str):str)+'</div>');}
 
@@ -65,10 +65,10 @@
 		</script>
 	</head>
 	<body>
-		<a href="/">home</a> &nbsp; 
-		<a href="/nav">nav</a> &nbsp; 
-		<a href="/page/23">page</a> &nbsp; 
-		<a href="/page/23?action=edit">edit page</a>
+		<a href="/Router-JS/">home</a> &nbsp; 
+		<a href="/Router-JS/nav">nav</a> &nbsp; 
+		<a href="/Router-JS/page/23">page</a> &nbsp; 
+		<a href="/Router-JS/page/23?action=edit">edit page</a>
 		<div id="asdf">LOG:</div>
 	</body>
 </html>
