@@ -6,6 +6,10 @@ or AJAX-based page rendering.
 ###Feature
 - history `pushState` and `popState`
 - Optional fallback to `#hash` value
+- Tested on IE6+, Firefox, Opera Chrome
+
+###note
+- using last-found match in executing callbacks
 
 ###usage
 ```html
@@ -64,6 +68,7 @@ $(function(){
     $('a').click(function(e){
 		if(
 			$(this).attr('href') && !$(this).attr('target') &&
+            (Router.pushstate || Router.hashbang) &&
 			Router.isInternal($(this).attr('href'))
 		){
 			e.preventDefault();
