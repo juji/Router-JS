@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>	<html class="ie ie6 lte10 lte9 lte8 lte7" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" ><![endif]-->
+<!--[if IE 7]>		<html class="ie ie7 lte10 lte9 lte8" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" ><![endif]-->
+<!--[if IE 8]>		<html class="ie ie8 lte10 lte9" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" ><![endif]-->
+<!--[if IE 9]>		<html class="ie ie9 lte10" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" ><![endif]-->
+<!--[if gt IE 9]>	<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" ><![endif]-->
+<!--[if !IE]><!-->	<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" ><!--<![endif]-->
+	<head>
+		<title>Router test</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/json2/20130526/json2.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="/Router.min.js"></script>
+		<script>
+		console = {}; console.log = function(str){$('#asdf').append('<div>'+(typeof str == 'object'?JSON.stringify(str):str)+'</div>');}
+
+		$(function(){
+
+			Router.init({root:'test/router'}).add('',function(){
+				console.log('======================');
+				console.log('default');
+			}).add('page/:id',function(path,query){
+				console.log('======================');
+				console.log(this);
+				console.log(path);
+				console.log(query);
+			}).add('page/:id?:query=:value',function(path,query){
+				console.log('======================');
+				console.log(this);
+				console.log(path);
+				console.log(query);
+			}).add('nav',function(path,query){
+				console.log('======================');
+				console.log(this);
+				console.log(path);
+				console.log(query);
+			}).notfound(function(path,query){
+				console.log('======================');
+				console.log('notfound');
+				console.log(path);
+				console.log(query);
+			}).listen();
+
+
+			$('a').click(function(e){
+				if(
+					$(this).attr('href') && !$(this).attr('target') &&
+					Router.isInternal($(this).attr('href'))
+				){
+					e.preventDefault();
+					Router.navigate($(this).attr('href'));
+					return false;
+				}
+				return true;
+			});
+
+			/*
+			setTimeout(function(){
+				$('#asdf').remove();
+			},1000);
+			*/
+		});
+		</script>
+	</head>
+	<body>
+		<a href="/">home</a> &nbsp; 
+		<a href="/nav">nav</a> &nbsp; 
+		<a href="/page/23">page</a> &nbsp; 
+		<a href="/page/23?action=edit">edit page</a>
+		<div id="asdf">LOG:</div>
+	</body>
+</html>
