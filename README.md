@@ -1,7 +1,6 @@
 Router-JS
 =========
-Is an HTML 5 Router JavaScript library for Single Page Applications,
-
+Is an HTML 5 Router JavaScript library for Single Page Applications,<br />
 or AJAX based page rendering.
 
 ###Feature
@@ -52,6 +51,13 @@ $(function(){
         
     })
     
+    .notfound(function(path,query){
+        
+        console.log(path);
+        console.log(query);
+        
+    })
+    
     .listen();
     
     //you probably want to do this
@@ -93,11 +99,9 @@ Check these using your console:
     // {query:'123'}
     
 ```
-
-
 <br />
 <br />
-#:)
+##:)
 <br />
 cheers.. [jujiyangasli.com](jujiyangasli.com)
 
